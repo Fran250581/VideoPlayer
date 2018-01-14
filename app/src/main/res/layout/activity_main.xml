@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context="com.example.fran.videoplayer.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:id="@+id/ButonsLayout"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+        <ImageButton android:id="@+id/play"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/play"/>
+        <ImageButton android:id="@+id/pause"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/pause"/>
+        <ImageButton android:id="@+id/stop"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/stop"/>
+        <ImageButton android:id="@+id/logButton"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/log"/>
+        <EditText android:id="@+id/path"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="/mnt/sdcard/media/video.mp4"/>
+    </LinearLayout>
+    <VideoView android:id="@+id/surfaceView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ButonsLayout"/>
+    <ScrollView android:id="@+id/ScrollView"
+        android:layout_height="150px"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+        <TextView android:id="@+id/Log"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Log:"
+            android:textColor="@android:color/white" />
+    </ScrollView>
+</RelativeLayout>
